@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS charges;
+DROP TABLE IF EXISTS customers;

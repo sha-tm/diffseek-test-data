@@ -1,0 +1,67 @@
+openapi: 3.0.3
+info:
+  title: Acme Payments API
+  version: 1.4.0
+paths:
+  /v1/charges:
+    post:
+      operationId: createCharge
+      summary: Create a one-time charge with a card token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChargeRequest'
+      responses:
+        '200':
+          description: Charge created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Charge'
+  /v1/customers/{customerId}:
+    get:
+      operationId: getCustomer
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+components:
+  schemas:
+    ChargeRequest:
+      type: object
+      required: [customerId, amountCents, currency, cardToken]
+      properties:
+        customerId:
+          type: string
+        amountCents:
+          type: integer
+          format: int64
+        currency:
+          type: string
+        cardToken:
+          type: string
+    Charge:
+      type: object
+      properties:
+        chargeId:
+          type: string
+        status:
+          type: string
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string

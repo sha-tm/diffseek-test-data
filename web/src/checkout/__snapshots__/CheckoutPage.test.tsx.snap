@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`CheckoutPage > renders shipping step 1`] = `
+<div class="checkout-page">
+  <h1>Checkout</h1>
+</div>
+`;

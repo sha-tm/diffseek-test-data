@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package acme.payments.v1;
+
+option go_package = "github.com/acme/checkout/services/payments/proto;paymentspb";
+
+message BillingAddress {
+  string line1 = 1;
+  string line2 = 2;
+  string city = 3;
+  string region = 4;
+  string postal_code = 5;
+  string country = 6;
+}

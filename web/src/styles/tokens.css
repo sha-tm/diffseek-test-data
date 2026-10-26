@@ -1,0 +1,9 @@
+:root {
+  --acme-ink: #14213d;
+  --acme-paper: #f8f5f0;
+  --acme-accent: #c44900;
+  --acme-muted: #6b7280;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--acme-ink);
+  background: var(--acme-paper);
+}
