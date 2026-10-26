@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { track } from "../../lib/analytics";
 import type { ShippingAddress } from "../../types/checkout";
 import type { Order } from "../../types/order";
 
@@ -29,6 +30,7 @@ export function useCheckout(orderId: string | undefined) {
   }, [orderId]);
 
   function markPaid(chargeId: string) {
+    track("checkout_paid", { chargeId });
     setOrder((prev) => (prev ? { ...prev, chargeId, status: "paid" } : prev));
   }
 

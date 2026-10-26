@@ -2,13 +2,16 @@
 export interface ConfigurationParameters {
   basePath?: string;
   accessToken?: string;
+  fetchApi?: typeof fetch;
 }
 
 export class Configuration {
   basePath: string;
   accessToken?: string;
+  fetchApi?: typeof fetch;
   constructor(params: ConfigurationParameters = {}) {
     this.basePath = params.basePath ?? "/v1";
     this.accessToken = params.accessToken;
+    this.fetchApi = params.fetchApi;
   }
 }

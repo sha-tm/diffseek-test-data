@@ -14,10 +14,11 @@ func New(databaseURL string) *Service {
 }
 
 type ChargeInput struct {
-	CustomerID  string
-	AmountCents int64
-	Currency    string
-	CardToken   string
+	CustomerID      string
+	AmountCents     int64
+	Currency        string
+	CardToken       string
+	PaymentMethodID string
 }
 
 type ChargeResult struct {
@@ -31,11 +32,15 @@ type Customer struct {
 }
 
 func (s *Service) Charge(ctx context.Context, in ChargeInput) (*ChargeResult, error) {
-	if in.CardToken == "" {
-		return nil, fmt.Errorf("cardToken is required")
+	if in.CardToken == "" && in.PaymentMethodID == "" {
+		return nil, fmt.Errorf("cardToken or paymentMethodId is required")
 	}
 	_ = ctx
-	return &ChargeResult{ChargeID: "ch_" + in.CustomerID, Status: "succeeded"}, nil
+	ref := in.PaymentMethodID
+	if ref == "" {
+		ref = in.CustomerID
+	}
+	return &ChargeResult{ChargeID: "ch_" + ref, Status: "succeeded"}, nil
 }
 
 func (s *Service) GetCustomer(ctx context.Context, id string) (*Customer, error) {

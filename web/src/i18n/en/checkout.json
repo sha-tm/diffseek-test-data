@@ -2,5 +2,8 @@
   "title": "Checkout",
   "shipping": "Shipping",
   "payment": "Payment",
-  "payNow": "Pay now"
+  "payNow": "Pay now",
+  "savedCards": "Saved cards",
+  "newCard": "New card",
+  "managePaymentMethods": "Open payment methods"
 }

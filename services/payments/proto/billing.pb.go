@@ -3,5 +3,19 @@
 
 package paymentspb
 
-// Base stub prior to saved payment methods regeneration.
-const File_billing_pb_go = "acme/payments/billing.pb.go"
+import (
+  protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+  protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+)
+
+type BillingAddress struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *BillingAddress) Reset() { *x = BillingAddress{} }
+func (x *BillingAddress) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*BillingAddress) ProtoMessage() {}
+func (x *BillingAddress) ProtoReflect() protoreflect.Message { return nil }
+

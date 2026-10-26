@@ -6,3 +6,5 @@ export type ShippingAddress = {
   postalCode: string;
   country: string;
 };
+
+export type PaymentMode = "saved" | "new";

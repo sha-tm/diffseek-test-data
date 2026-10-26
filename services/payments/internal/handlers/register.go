@@ -13,4 +13,5 @@ func Register(mux *http.ServeMux, svc *service.Service) {
 	})
 	mux.HandleFunc("POST /v1/charges", charge(svc))
 	mux.HandleFunc("GET /v1/customers/{id}", getCustomer(svc))
+	RegisterPaymentMethods(mux, svc)
 }

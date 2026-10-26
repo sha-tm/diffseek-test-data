@@ -3,5 +3,96 @@
 
 package paymentspb
 
-// Base stub prior to saved payment methods regeneration.
-const File_paymentmethod_pb_go = "acme/payments/paymentmethod.pb.go"
+import (
+  protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+  protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+)
+
+type CardToken struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *CardToken) Reset() { *x = CardToken{} }
+func (x *CardToken) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*CardToken) ProtoMessage() {}
+func (x *CardToken) ProtoReflect() protoreflect.Message { return nil }
+
+type SavedCard struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *SavedCard) Reset() { *x = SavedCard{} }
+func (x *SavedCard) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*SavedCard) ProtoMessage() {}
+func (x *SavedCard) ProtoReflect() protoreflect.Message { return nil }
+
+type PaymentMethod struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *PaymentMethod) Reset() { *x = PaymentMethod{} }
+func (x *PaymentMethod) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*PaymentMethod) ProtoMessage() {}
+func (x *PaymentMethod) ProtoReflect() protoreflect.Message { return nil }
+
+type ListPaymentMethodsRequest struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *ListPaymentMethodsRequest) Reset() { *x = ListPaymentMethodsRequest{} }
+func (x *ListPaymentMethodsRequest) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*ListPaymentMethodsRequest) ProtoMessage() {}
+func (x *ListPaymentMethodsRequest) ProtoReflect() protoreflect.Message { return nil }
+
+type ListPaymentMethodsResponse struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *ListPaymentMethodsResponse) Reset() { *x = ListPaymentMethodsResponse{} }
+func (x *ListPaymentMethodsResponse) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*ListPaymentMethodsResponse) ProtoMessage() {}
+func (x *ListPaymentMethodsResponse) ProtoReflect() protoreflect.Message { return nil }
+
+type CreatePaymentMethodRequest struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *CreatePaymentMethodRequest) Reset() { *x = CreatePaymentMethodRequest{} }
+func (x *CreatePaymentMethodRequest) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*CreatePaymentMethodRequest) ProtoMessage() {}
+func (x *CreatePaymentMethodRequest) ProtoReflect() protoreflect.Message { return nil }
+
+type DeletePaymentMethodRequest struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *DeletePaymentMethodRequest) Reset() { *x = DeletePaymentMethodRequest{} }
+func (x *DeletePaymentMethodRequest) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*DeletePaymentMethodRequest) ProtoMessage() {}
+func (x *DeletePaymentMethodRequest) ProtoReflect() protoreflect.Message { return nil }
+
+type DeletePaymentMethodResponse struct {
+  state protoimpl.MessageState
+  sizeCache protoimpl.SizeCache
+  unknownFields protoimpl.UnknownFields
+}
+
+func (x *DeletePaymentMethodResponse) Reset() { *x = DeletePaymentMethodResponse{} }
+func (x *DeletePaymentMethodResponse) String() string { return protoimpl.X.MessageStringOf(x) }
+func (*DeletePaymentMethodResponse) ProtoMessage() {}
+func (x *DeletePaymentMethodResponse) ProtoReflect() protoreflect.Message { return nil }
+

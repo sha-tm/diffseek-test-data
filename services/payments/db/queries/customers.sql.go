@@ -26,3 +26,22 @@ func (q *Queries) GetCustomer(ctx context.Context, id pgtype.UUID) (GetCustomerR
 	err := row.Scan(&i.ID, &i.Email, &i.CreatedAt)
 	return i, err
 }
+
+const ensureCustomer = `-- name: EnsureCustomer :one
+INSERT INTO customers (id, email)
+VALUES ($1, $2)
+ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email
+RETURNING id, email, created_at
+`
+
+type EnsureCustomerParams struct {
+	ID    pgtype.UUID
+	Email string
+}
+
+func (q *Queries) EnsureCustomer(ctx context.Context, arg EnsureCustomerParams) (GetCustomerRow, error) {
+	row := q.db.QueryRow(ctx, ensureCustomer, arg.ID, arg.Email)
+	var i GetCustomerRow
+	err := row.Scan(&i.ID, &i.Email, &i.CreatedAt)
+	return i, err
+}

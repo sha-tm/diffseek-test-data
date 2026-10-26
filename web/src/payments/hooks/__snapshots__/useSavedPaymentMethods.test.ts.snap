@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`useSavedPaymentMethods > exposes initial empty state 1`] = `
+{
+  "error": null,
+  "loading": true,
+  "methods": [],
+}
+`;

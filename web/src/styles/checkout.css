@@ -5,10 +5,34 @@
   padding: 2rem;
 }
 
-.payment-step .actions {
+.payment-step .actions,
+.saved-payment-methods .actions,
+.add-payment-method-form .actions {
   display: flex;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+.payment-mode {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.payment-mode .active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.payment-method-card {
+  border: 1px solid #e5e1d8;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.payment-method-card.selected {
+  border-color: var(--acme-accent);
 }
 
 .order-summary {

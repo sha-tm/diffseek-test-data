@@ -1,0 +1,19 @@
+// Vitest Snapshot v1
+
+exports[`PaymentMethodCard > renders card summary 1`] = `
+<div
+  class="payment-method-card"
+  role="button"
+  tabindex="0"
+>
+  <div>
+    <strong>
+      mastercard
+    </strong>
+     ending in 4444
+  </div>
+  <div class="meta">
+    Exp 8/2028
+  </div>
+</div>
+`;

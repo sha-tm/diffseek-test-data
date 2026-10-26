@@ -8,10 +8,11 @@ import (
 )
 
 type chargeRequest struct {
-	CustomerID string `json:"customerId"`
-	AmountCents int64 `json:"amountCents"`
-	Currency   string `json:"currency"`
-	CardToken  string `json:"cardToken"`
+	CustomerID      string `json:"customerId"`
+	AmountCents     int64  `json:"amountCents"`
+	Currency        string `json:"currency"`
+	CardToken       string `json:"cardToken"`
+	PaymentMethodID string `json:"paymentMethodId"`
 }
 
 func charge(svc *service.Service) http.HandlerFunc {
@@ -22,10 +23,11 @@ func charge(svc *service.Service) http.HandlerFunc {
 			return
 		}
 		result, err := svc.Charge(r.Context(), service.ChargeInput{
-			CustomerID:  req.CustomerID,
-			AmountCents: req.AmountCents,
-			Currency:    req.Currency,
-			CardToken:   req.CardToken,
+			CustomerID:      req.CustomerID,
+			AmountCents:     req.AmountCents,
+			Currency:        req.Currency,
+			CardToken:       req.CardToken,
+			PaymentMethodID: req.PaymentMethodID,
 		})
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadGateway)

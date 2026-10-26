@@ -12,5 +12,6 @@ export type Order = {
   totalCents: number;
   status: "open" | "paid" | "cancelled";
   chargeId?: string;
+  paymentMethodId?: string;
   lines: OrderLine[];
 };
