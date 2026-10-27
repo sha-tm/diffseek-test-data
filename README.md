@@ -2,9 +2,8 @@
 
 Monorepo for Acme's checkout and payments platform.
 
-## Teams
+## Layout
 
-- `@acme/web-platform` — `web/` (customer-facing checkout SPA)
-- `@acme/payments` — `services/payments/` and `web/src/payments/`
-
-Shared product docs live under `docs/` and are not owned by a team.
+- `web/` — customer-facing checkout SPA
+- `services/payments/` — payment methods, billing, and card vault API
+- `docs/` — product and API documentation

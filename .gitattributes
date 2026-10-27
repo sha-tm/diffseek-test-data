@@ -9,11 +9,16 @@ web/src/payments/generated/** linguist-generated
 web/src/generated/** linguist-generated
 **/generated/**/*.proto linguist-generated
 **/*.gen.proto linguist-generated
+**/*.pb.go linguist-generated
+**/*.sql.go linguist-generated
 **/__snapshots__/** linguist-generated
 
 # Types (group) — last matching assignment wins
+CODEOWNERS group=Config
+.gitattributes group=Config
 *.ts group=Code
 *.tsx group=Code
+*.go group=Code
 *.proto group=Code
 *.css group=Code
 *.sql group=Migrations
@@ -21,12 +26,17 @@ web/src/generated/** linguist-generated
 **/db/queries/*.sql group=Migrations
 **/*.test.ts group=Tests
 **/*.test.tsx group=Tests
+**/*_test.go group=Tests
 **/__tests__/** group=Tests
 **/__snapshots__/** group=Tests
 docs/** group=Docs
 **/*.md group=Docs
+**/package.json group=Config
+**/package-lock.json group=Config
+*.json group=Config
 **/*.yaml group=Config
 **/*.yml group=Config
+**/tsconfig*.json group=Config
 **/vite.config.ts group=Config
 **/featureFlags.ts group=Config
 docker-compose.yml group=Config
