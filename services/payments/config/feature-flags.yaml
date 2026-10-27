@@ -1,0 +1,7 @@
+flags:
+  saved_payment_methods:
+    enabled: true
+  billing_address_required:
+    enabled: true
+  network_token_prefer:
+    enabled: false

@@ -1,0 +1,9 @@
+routes:
+  - path: /
+    page: CheckoutPage
+  - path: /shipping
+    page: ShippingStep
+  - path: /payment
+    page: PaymentStep
+  - path: /payment-methods
+    page: PaymentMethodsPage

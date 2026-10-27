@@ -1,0 +1,29 @@
+/* Checkout layout primitives */
+.checkout-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.checkout-main {
+  min-width: 0;
+}
+
+.checkout-aside {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}
+
+@media (max-width: 860px) {
+  .checkout-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-aside {
+    position: static;
+  }
+}

@@ -1,3 +1,4 @@
 # Acme Checkout docs
 
-Product and API documentation for the checkout monorepo.
+Shared product and API documentation for the checkout monorepo.
+These docs are not owned by a CODEOWNERS team.

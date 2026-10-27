@@ -1,0 +1,14 @@
+/* Payments service operator dashboard shell */
+.payments-dashboard {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: #152033;
+  background: linear-gradient(180deg, #f5f7fb 0%, #eef2f8 100%);
+  min-height: 100vh;
+}
+
+.payments-dashboard__nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #d7dee8;
+}

@@ -1,0 +1,10 @@
+service:
+  name: payments
+  listen: ":8081"
+  grpc_listen: ":9081"
+database:
+  max_conns: 20
+  statement_timeout: 3s
+vault:
+  provider: stripe_tokens
+  allow_test_cards: true

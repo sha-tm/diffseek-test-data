@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: Acme Payment Methods
+  version: 1.2.0
+paths:
+  /v1/payment-methods:
+    get:
+      operationId: listPaymentMethods
+      parameters:
+        - name: customerId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Saved payment methods for the customer
+    post:
+      operationId: createPaymentMethod
+      responses:
+        "201":
+          description: Created
