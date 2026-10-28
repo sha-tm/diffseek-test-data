@@ -1,7 +1,10 @@
 # Acme Checkout CODEOWNERS
 # Last matching pattern wins (GitHub / DiffSeek semantics).
+# Docs under docs/ are shared product docs (not team-owned).
+
+CODEOWNERS @acme/web-platform
+.gitattributes @acme/web-platform
 
 web/** @acme/web-platform
-docs/** @acme/docs
 services/payments/** @acme/payments
 web/src/payments/** @acme/payments
