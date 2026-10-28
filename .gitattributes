@@ -16,14 +16,14 @@ web/src/generated/** linguist-generated
 # Types (group) — last matching assignment wins
 CODEOWNERS group=Config
 .gitattributes group=Config
-*.ts group=Code
-*.tsx group=Code
-*.go group=Code
-*.proto group=Code
-*.css group=Code
-*.sql group=Migrations
-**/db/migrations/** group=Migrations
-**/db/queries/*.sql group=Migrations
+*.ts group=App
+*.tsx group=App
+*.go group=App
+*.proto group=App
+*.css group=App
+*.sql group=App
+**/db/migrations/** group=App
+**/db/queries/*.sql group=App
 **/*.test.ts group=Tests
 **/*.test.tsx group=Tests
 **/*_test.go group=Tests
