@@ -1,42 +1,27 @@
 # DiffSeek / Linguist attributes for Acme Checkout
 
-# Language overrides
+# Generated artifacts
+web/src/generated/** linguist-generated
+web/src/payments/generated/** linguist-generated
+**/*.gen.proto linguist-generated
+**/__snapshots__/** linguist-generated
+
+# Languages
 *.ts linguist-language=TypeScript
 *.tsx linguist-language=TypeScript
 
-# Generated artifacts
-web/src/payments/generated/** linguist-generated
-web/src/generated/** linguist-generated
-**/generated/**/*.proto linguist-generated
-**/*.gen.proto linguist-generated
-**/*.pb.go linguist-generated
-**/*.sql.go linguist-generated
-**/__snapshots__/** linguist-generated
-
-# Types (group) — last matching assignment wins
-CODEOWNERS group=Config
-.gitattributes group=Config
+# Groups: last matching line wins
 *.ts group=App
 *.tsx group=App
-*.go group=App
 *.proto group=App
-*.css group=App
 *.sql group=App
-**/db/migrations/** group=App
-**/db/queries/*.sql group=App
+**/*.yaml group=Config
+**/featureFlags.ts group=Config
+CODEOWNERS group=Config
+.gitattributes group=Config
+
+# Tests
 **/*.test.ts group=Tests
 **/*.test.tsx group=Tests
-**/*_test.go group=Tests
 **/__tests__/** group=Tests
 **/__snapshots__/** group=Tests
-docs/** group=Docs
-**/*.md group=Docs
-**/package.json group=Config
-**/package-lock.json group=Config
-*.json group=Config
-**/*.yaml group=Config
-**/*.yml group=Config
-**/tsconfig*.json group=Config
-**/vite.config.ts group=Config
-**/featureFlags.ts group=Config
-docker-compose.yml group=Config
