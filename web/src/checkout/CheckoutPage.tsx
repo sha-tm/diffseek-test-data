@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { OrderSummary } from "./OrderSummary";
 import { PaymentStep } from "./PaymentStep";
 import { ShippingStep } from "./ShippingStep";
 import { useCheckout } from "./hooks/useCheckout";
+import { featureFlags } from "../config/featureFlags";
 
 export function CheckoutPage() {
   const { orderId } = useParams();
@@ -13,6 +14,12 @@ export function CheckoutPage() {
   return (
     <div className="checkout-page">
       <h1>Checkout</h1>
+      {featureFlags.savedPaymentMethods ? (
+        <p className="hint">
+          Prefer managing cards later?{" "}
+          <Link to="/account/payment-methods">Open payment methods</Link>
+        </p>
+      ) : null}
       {step === "shipping" ? (
         <ShippingStep
           value={checkout.shipping}

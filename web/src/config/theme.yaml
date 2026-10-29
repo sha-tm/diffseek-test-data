@@ -1,0 +1,11 @@
+theme:
+  colors:
+    accent: "#1f6feb"
+    surface: "#ffffff"
+    text: "#152033"
+    muted: "#667085"
+  radii:
+    sm: 0.375rem
+    md: 0.5rem
+  spacing:
+    unit: 4

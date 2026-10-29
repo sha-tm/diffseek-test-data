@@ -1,0 +1,45 @@
+// Vitest Snapshot v1
+
+exports[`SavedPaymentMethods > renders empty state 1`] = `
+<section class="saved-payment-methods">
+  <header>
+    <h2>
+      Saved payment methods
+    </h2>
+    <button type="button">
+      Add card
+    </button>
+  </header>
+  <div class="method-list">
+    <p class="empty">
+      No saved cards yet.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`SavedPaymentMethods > renders saved cards 1`] = `
+<section class="saved-payment-methods">
+  <header>
+    <h2>
+      Saved payment methods
+    </h2>
+    <button type="button">
+      Add card
+    </button>
+  </header>
+  <div class="method-list">
+    <div class="payment-method-card selected">
+      <div>
+        <strong>
+          visa
+        </strong>
+         ending in 4242
+        <span class="badge">
+          Default
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+`;

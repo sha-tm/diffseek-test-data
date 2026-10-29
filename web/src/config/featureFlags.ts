@@ -1,5 +1,5 @@
 export const featureFlags = {
   expressCheckout: true,
-  savedPaymentMethods: false,
+  savedPaymentMethods: true,
   applePay: false,
 } as const;

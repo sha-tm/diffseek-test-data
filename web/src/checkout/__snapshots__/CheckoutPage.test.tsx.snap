@@ -2,6 +2,14 @@
 
 exports[`CheckoutPage > renders shipping step 1`] = `
 <div class="checkout-page">
-  <h1>Checkout</h1>
+  <h1>
+    Checkout
+  </h1>
+  <p class="hint">
+    Prefer managing cards later?
+    <a href="/account/payment-methods">
+      Open payment methods
+    </a>
+  </p>
 </div>
 `;

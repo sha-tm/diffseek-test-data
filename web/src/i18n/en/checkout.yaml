@@ -1,0 +1,7 @@
+checkout:
+  title: Checkout
+  shipping: Shipping
+  payment: Payment
+  review: Review order
+  place_order: Place order
+  saved_methods: Saved payment methods

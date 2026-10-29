@@ -1,0 +1,6 @@
+payments:
+  add_card: Add card
+  delete_card: Remove card
+  set_default: Set as default
+  default_badge: Default
+  expires: Expires {month}/{year}

@@ -1,0 +1,10 @@
+app:
+  name: acme-checkout
+  locale: en-US
+  currency: USD
+features:
+  saved_payment_methods: true
+  express_checkout: false
+api:
+  checkout_base_url: /api/checkout
+  payments_base_url: /api/payments

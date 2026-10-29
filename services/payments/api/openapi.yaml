@@ -1,12 +1,12 @@
 openapi: 3.0.3
 info:
   title: Acme Payments API
-  version: 1.4.0
+  version: 1.5.0
 paths:
   /v1/charges:
     post:
       operationId: createCharge
-      summary: Create a one-time charge with a card token
+      summary: Create a charge with a card token or saved payment method
       requestBody:
         required: true
         content:
@@ -36,11 +36,70 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Customer'
+  /v1/customers/{customerId}/payment-methods:
+    get:
+      operationId: listPaymentMethods
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Saved payment methods
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PaymentMethod'
+    post:
+      operationId: createPaymentMethod
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePaymentMethodRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentMethod'
+  /v1/customers/{customerId}/payment-methods/{paymentMethodId}:
+    delete:
+      operationId: deletePaymentMethod
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentMethodId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted
 components:
   schemas:
     ChargeRequest:
       type: object
-      required: [customerId, amountCents, currency, cardToken]
+      required: [customerId, amountCents, currency]
       properties:
         customerId:
           type: string
@@ -50,6 +109,8 @@ components:
         currency:
           type: string
         cardToken:
+          type: string
+        paymentMethodId:
           type: string
     Charge:
       type: object
@@ -65,3 +126,38 @@ components:
           type: string
         email:
           type: string
+    BillingAddress:
+      type: object
+      properties:
+        line1: { type: string }
+        line2: { type: string }
+        city: { type: string }
+        region: { type: string }
+        postalCode: { type: string }
+        country: { type: string }
+    SavedCard:
+      type: object
+      properties:
+        brand: { type: string }
+        last4: { type: string }
+        expMonth: { type: integer }
+        expYear: { type: integer }
+    PaymentMethod:
+      type: object
+      properties:
+        id: { type: string }
+        customerId: { type: string }
+        card:
+          $ref: '#/components/schemas/SavedCard'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        isDefault: { type: boolean }
+        createdAt: { type: string, format: date-time }
+    CreatePaymentMethodRequest:
+      type: object
+      required: [cardToken]
+      properties:
+        cardToken: { type: string }
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        setDefault: { type: boolean }

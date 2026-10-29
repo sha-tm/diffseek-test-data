@@ -4,9 +4,54 @@ package acme.payments.v1;
 
 option go_package = "github.com/acme/checkout/services/payments/proto;paymentspb";
 
-// Placeholder — saved payment methods land in a follow-up change.
+import "billing.proto";
+
+service PaymentMethods {
+  rpc ListPaymentMethods(ListPaymentMethodsRequest) returns (ListPaymentMethodsResponse);
+  rpc CreatePaymentMethod(CreatePaymentMethodRequest) returns (PaymentMethod);
+  rpc DeletePaymentMethod(DeletePaymentMethodRequest) returns (DeletePaymentMethodResponse);
+}
+
 message CardToken {
   string token = 1;
   string brand = 2;
   string last4 = 3;
 }
+
+message SavedCard {
+  string brand = 1;
+  string last4 = 2;
+  int32 exp_month = 3;
+  int32 exp_year = 4;
+}
+
+message PaymentMethod {
+  string id = 1;
+  string customer_id = 2;
+  SavedCard card = 3;
+  BillingAddress billing_address = 4;
+  bool is_default = 5;
+  string created_at = 6;
+}
+
+message ListPaymentMethodsRequest {
+  string customer_id = 1;
+}
+
+message ListPaymentMethodsResponse {
+  repeated PaymentMethod items = 1;
+}
+
+message CreatePaymentMethodRequest {
+  string customer_id = 1;
+  string card_token = 2;
+  BillingAddress billing_address = 3;
+  bool set_default = 4;
+}
+
+message DeletePaymentMethodRequest {
+  string customer_id = 1;
+  string payment_method_id = 2;
+}
+
+message DeletePaymentMethodResponse {}

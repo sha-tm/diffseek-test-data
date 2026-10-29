@@ -1,0 +1,38 @@
+// Vitest Snapshot v1
+
+exports[`AddPaymentMethodForm > renders form 1`] = `
+<form class="add-payment-method-form">
+  <h3>
+    Add a payment method
+  </h3>
+  <label class="card-token-field">
+    <span>
+      Card details
+    </span>
+    <input
+      autocomplete="cc-number"
+      inputmode="numeric"
+      placeholder="Card number"
+      value=""
+    />
+  </label>
+  <label class="checkbox">
+    <input
+      checked=""
+      type="checkbox"
+    />
+    Set as default
+  </label>
+  <div class="actions">
+    <button type="button">
+      Cancel
+    </button>
+    <button
+      disabled=""
+      type="submit"
+    >
+      Save card
+    </button>
+  </div>
+</form>
+`;

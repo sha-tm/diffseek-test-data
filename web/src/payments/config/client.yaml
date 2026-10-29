@@ -1,0 +1,8 @@
+payments_client:
+  timeout_ms: 8000
+  retries: 2
+  default_page_size: 20
+endpoints:
+  list: /v1/payment-methods
+  create: /v1/payment-methods
+  delete: /v1/payment-methods/{id}

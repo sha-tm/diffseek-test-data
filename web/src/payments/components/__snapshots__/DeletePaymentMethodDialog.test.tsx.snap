@@ -1,0 +1,18 @@
+// Vitest Snapshot v1
+
+exports[`DeletePaymentMethodDialog > renders confirm copy 1`] = `
+<div
+  aria-label="Remove payment method"
+  aria-modal="true"
+  class="modal"
+  role="dialog"
+>
+  <p>
+    Remove the card ending in
+    <strong>
+      4242
+    </strong>
+    ? Future checkouts will need a new card unless another saved method remains.
+  </p>
+</div>
+`;

@@ -4,7 +4,9 @@ import { AppRoutes } from "./routes";
 export function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <div className="app-shell" data-feature="saved-payment-methods">
+        <AppRoutes />
+      </div>
     </BrowserRouter>
   );
 }

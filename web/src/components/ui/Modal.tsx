@@ -15,11 +15,11 @@ export function Modal({ open, title, children, onClose }: Props) {
         className="modal"
         role="dialog"
         aria-modal="true"
-        aria-label={title}
+        aria-labelledby="modal-title"
         onClick={(e) => e.stopPropagation()}
       >
         <header>
-          <h2>{title}</h2>
+          <h2 id="modal-title">{title}</h2>
           <button type="button" onClick={onClose} aria-label="Close">
             ×
           </button>
