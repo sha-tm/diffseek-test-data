@@ -6,10 +6,6 @@ web/src/payments/generated/** linguist-generated
 **/*.gen.proto linguist-generated
 **/__snapshots__/** linguist-generated
 
-# Languages
-*.ts linguist-language=TypeScript
-*.tsx linguist-language=TypeScript
-
 # Groups: last matching line wins
 *.ts group=App
 *.tsx group=App
@@ -25,3 +21,7 @@ CODEOWNERS group=Config
 **/*.test.tsx group=Tests
 **/__tests__/** group=Tests
 **/__snapshots__/** group=Tests
+
+# Languages
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
