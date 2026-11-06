@@ -1,0 +1,8 @@
+{
+  "name": "diffseek-test-data",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "DIFFSEEK_FIXTURE_ROOT=. node scripts/diffseek-test-data/generate-fixture-tree.mjs"
+  }
+}
